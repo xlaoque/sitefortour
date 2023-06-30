@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Выбор зон в маршруте</title>
+  <style>
+    /* CSS стили для макета страницы */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    .return-feedback {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .route-map {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .zone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+    }
+
+    .zone img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .zone h3 {
+      margin: 0;
+    }
+
+    .zone p {
+      text-align: center;
+    }
+
+    .booking-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .booking-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Поле для возврата и обратной связи -->
+  <div class="return-feedback">
+    <a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a>
+    <a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a>
+  </div>
+
+  <!-- Схема маршрута с зонами для посещения -->
+  <div class="route-map">
+    <div class="zone">
+      <img src="zone1.jpg" alt="Зона 1">
+      <h3>Зона 1</h3>
+      <p>Описание зоны 1</p>
+    </div>
+
+    <div class="zone">
+      <img src="zone2.jpg" alt="Зона 2">
+      <h3>Зона 2</h3>
+      <p>Описание зоны 2</p>
+    </div>
+
+    <!-- Добавьте информацию о других доступных зонах -->
+  </div>
+
+  <!-- Кнопка для перехода к странице бронирования -->
+  <button class="booking-button" onclick="window.location.href='booking.html'">Перейти к бронированию</button>
+</body>
+</html>

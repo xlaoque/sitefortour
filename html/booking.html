@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Страница бронирования</title>
+  <style>
+    /* CSS стили для макета страницы */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Стили для формы */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+    }
+
+    label {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      height: 80px;
+    }
+
+    .booking-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .booking-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <!-- Данные о заказе -->
+    <label for="region">Регион:</label>
+    <input type="text" id="region" name="region" required>
+
+    <label for="route">Наименование маршрута:</label>
+    <input type="text" id="route" name="route" required>
+
+    <label for="zones">Выбранные зоны для посещения:</label>
+    <input type="text" id="zones" name="zones" required>
+
+    <label for="dates">Предполагаемые даты похода:</label>
+    <input type="text" id="dates" name="dates" required>
+
+    <label for="people">Количество человек:</label>
+    <input type="number" id="people" name="people" required>
+
+    <label for="cost">Стоимость:</label>
+    <input type="number" id="cost" name="cost" required>
+
+    <!-- Выбор дополнительных услуг -->
+    <label for="services">Выбор дополнительных услуг:</label>
+    <select id="services" name="services" multiple>
+      <option value="guide">Услуги проводника</option>
+      <option value="rental">Услуги оренды туристического оборудования</option>
+      <option value="photographer">Услуги фотографа/видеооператора</option>
+      <option value="insurance">Страхование от несчастных случаев</option>
+    </select>
+
+    <label for="comment">Дополнительный комментарий к заказу:</label>
+    <textarea id="comment" name="comment"></textarea>
+
+    <label for="email">Email заказчика:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="total-cost">Итоговая стоимость:</label>
+    <input type="number" id="total-cost" name="total-cost" required>
+
+    <!-- Кнопка для оформления бронирования -->
+    <button class="booking-button" type="submit">Оформить бронирование</button>
+  </form>
+
+  <script>
+    // Обработчик события для кнопки оформления бронирования
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Отменить отправку формы
+
+      // Получить значения полей формы
+      const region = document.getElementById('region').value;
+      const route = document.getElementById('route').value;
+      const zones = document.getElementById('zones').value;
+      const dates = document.getElementById('dates').value;
+      const people = document.getElementById('people').value;
+      const cost = document.getElementById('cost').value;
+      const services = Array.from(document.getElementById('services').selectedOptions).map(option => option.value);
+      const comment = document.getElementById('comment').value;
+      const email = document.getElementById('email').value;
+      const totalCost = document.getElementById('total-cost').value;
+
+      // Выполнить необходимые действия с полученными данными, например, отправить их на сервер или обработать локально
+
+      // Пример вывода данных в консоль
+      console.log('Регион:', region);
+      console.log('Наименование маршрута:', route);
+      console.log('Выбранные зоны для посещения:', zones);
+      console.log('Предполагаемые даты похода:', dates);
+      console.log('Количество человек:', people);
+      console.log('Стоимость:', cost);
+      console.log('Выбранные дополнительные услуги:', services);
+      console.log('Дополнительный комментарий:', comment);
+      console.log('Email заказчика:', email);
+      console.log('Итоговая стоимость:', totalCost);
+
+      // Дополните код для выполнения необходимых действий с данными
+
+      // Сбросить значения полей формы
+      document.getElementById('region').value = '';
+      document.getElementById('route').value = '';
+      document.getElementById('zones').value = '';
+      document.getElementById('dates').value = '';
+      document.getElementById('people').value = '';
+      document.getElementById('cost').value = '';
+      document.getElementById('services').value = '';
+      document.getElementById('comment').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('total-cost').value = '';
+    });
+  </script>
+</body>
+</html>
